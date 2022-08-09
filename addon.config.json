@@ -1,0 +1,26 @@
+{
+  "AddonUUID": "3dc60df7-fdf6-4f74-8f07-96e4c2e4eb92",
+  "AddonVersion": "0.0.2",
+  "DebugPort": 4500,
+  "WebappBaseUrl": "https://app.sandbox.pepperi.com",
+  "DefaultEditor": "main",
+  "Endpoints": [
+    "installation.ts",
+    "api.ts"
+  ],
+  "Editors": [
+    "main"
+  ],
+  "PublishConfig": {
+    "ClientStack": "ng10",
+    "Editors": [
+      {
+        "ParentPackageName": "Training",
+        "PackageName": "todos",
+        "Description": "Hagit's todos for automated testing"
+      }
+    ],
+    "Dependencies": {},
+    "CPISide": []
+  }
+}
