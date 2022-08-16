@@ -4,6 +4,7 @@ import { PepLayoutService, PepScreenSizeType } from '@pepperi-addons/ngx-lib';
 import { AddonService } from '../../services/addon.service';
 import { PepDialogData, PepDialogService } from '@pepperi-addons/ngx-lib/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TodosService } from 'src/app/services/todos.service';
 
 @Component({
   templateUrl: './todo-form.component.html',
@@ -20,7 +21,8 @@ export class TodoForm implements OnInit {
         public translate: TranslateService,
         public dialogService: PepDialogService,
         public router: Router,
-        public activatedRoute: ActivatedRoute
+        public activatedRoute: ActivatedRoute,
+        private todosService: TodosService
     ) {
 
         this.layoutService.onResize$.subscribe(size => {
@@ -28,16 +30,24 @@ export class TodoForm implements OnInit {
         });
 
         this.key = this.activatedRoute.snapshot.params["todo_uuid"];
-        this.loading = false;
+        this.loading = true;
 
-
+        this.todosService.getTodo(this.key).then(obj => {
+            this.obj = obj[0];
+            this.loading = false;
+        });
     }
 
     mode: 'Edit' | 'Add'
     title: string = "Hello"
-    field1: string = "Hello"
     loading: boolean = true
     key: string;
+
+    obj = {
+        Name: '',
+        Description: '',
+        DueDate: ''
+    }
 
     ngOnInit() {
     }

@@ -16,11 +16,14 @@
             <h5>{{ 'TODO_DETAILS' | translate}}</h5>
             <div *ngIf="!loading">
                 <div class="grid-container">
-                    <div class="key">
-                        <pep-textbox [(value)]="key" [disabled]="true" [readonly]="true"></pep-textbox>
+                    <div class="name">
+                        <pep-textbox [(value)]="obj.Name" [disabled]="true" [readonly]="true"></pep-textbox>
                     </div>
-                    <div class="field1">
-                        <pep-textbox [(value)]="field1" [disabled]="false" [readonly]="false"></pep-textbox>
+                    <div class="desc">
+                        <pep-textbox [(value)]="obj.Description" [disabled]="false" [readonly]="false"></pep-textbox>
+                    </div>
+                    <div class="duedate">
+                        <pep-date [(value)]="obj.DueDate" [disabled]="false" [readonly]="false"></pep-date>
                     </div>
                 </div>          
             </div>

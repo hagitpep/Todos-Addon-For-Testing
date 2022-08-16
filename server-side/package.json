@@ -21,6 +21,7 @@
         "@rollup/plugin-node-resolve": "^8.0.0",
         "@types/dotenv": "^8.2.0",
         "@types/node": "^10.17.24",
+        "@types/uuid": "^8.3.4",
         "nodemon": "^2.0.4",
         "rollup": "^2.10.9",
         "rollup-plugin-typescript2": "^0.27.1",
@@ -28,7 +29,8 @@
         "typescript": "~3.8.0"
     },
     "dependencies": {
-        "@pepperi-addons/debug-server": "*",
-        "@pepperi-addons/papi-sdk": "*"
+        "@pepperi-addons/debug-server": "0.0.36",
+        "@pepperi-addons/papi-sdk": "^1.39.6",
+        "uuid": "^8.3.2"
     }
 }

@@ -10,6 +10,7 @@ import { TranslateModule, TranslateLoader, TranslateStore } from '@ngx-translate
 import { AppRoutingModule } from './app.routes';
 import { BlockModule } from './addon/addon.module';
 import { AppComponent } from './app.component';
+import { PepDateModule } from '@pepperi-addons/ngx-lib/date';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         BlockModule,
         AppRoutingModule,
+        PepDateModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
